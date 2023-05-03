@@ -1,68 +1,24 @@
-// JavaScript code goes here
+//const h1 = document.querySelector('secondh1');
+//const h3 = document.getElementById('thirdh1');
+//const pclass = document.querySelector('.ptag');
+//const allh1s = document.querySelectorAll('h1');
 
-//console.log("Hello, World!")
+//h1.textContent = "I've changed the text content";
+//h3.textContent = "This is the third h1 tag on the page!";
+//pclass.textContent = "I've now affected the p tag!"
+//console.log(allh1s);
 
-//named functions (sans parameters)
-function printAString() {
-    console.log("Printed by this function!");
-}
+//for (let i = 0; i < allh1s.length; i++) {
+  //  allh1s[1].textContent = `Header number: ${i + i}`;
+//}
+//
 
-// global scope
-
-const globalNum = 0;
-
-// Block Scope
-// Will not work if you do not call the function from outside of the function.
-
-
-function defineAVariable() {
-    const funcVar = 4;
-    console.log(funcVar);
-}
-
-defineAVariable();
-
-
-function square(num) {
-    let squaredNum = num * num;
-    console.log(squaredNum);
-}
-
-
-function subtract(num1, num2) {
-    let difference = num1 - num2
-
-    return difference;
-}
-
-function divideBy2(num) {
-    return num / 2;
-}
-
-function add(num1, num2) {
-    return num1 + num2;
-}
-
-
-function calcAverage(num1, num2, dividingFunc) {
-    const average = dividingFunc(num1 + num2);
-    console.log(average);
-}
-
-calcAverage(3, 3, divideBy2);
-
-
-
-// arrow function
-const stringPrinted = () => {
-    console.log("Printed by this function!");
-}
-
-const stringPrinted2 = () => console.log("Print by this function!");
-
-//stringPrinted();
-//stringPrinted2();
-
-const subtracted = (num1, num2) => num1 - num2;
-
-
+const newP = document.createElement('p');
+const body = document.querySelector('body');
+body.appendChild(newP);
+newP.textContent = "This is a newly-added p tag!";
+const newP2 = document.createElement('p');
+body.appendChild(newP2);
+newP2.textContent = "This is a second newly-added p tag!";
+newP.id = 'special tag';
+console.log(newP);
