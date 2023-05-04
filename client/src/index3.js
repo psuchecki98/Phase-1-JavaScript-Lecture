@@ -5,7 +5,10 @@
 
 fetch("http://localhost:3000/books")
     .then((resp) => resp.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+        renderBooks(data)
+        renderBooksForEach(data)
+    })
 
 function renderBooks(books) {
     for (let i = 0; i < books.length; i++) {
@@ -16,4 +19,19 @@ function renderBooks(books) {
 
         h1.textContent = title
     }
+
+function renderBooksForEach(books) {
+    books.forEach((book) => {
+        let.author = book.author
+        let imageURL = book.image
+
+        let p = document.createElement("p")
+        p.textContent = author
+        body.appendChild(p)
+
+        let img = document.createElement("img")
+        img.src = imageURL
+        body.appendChild(img)
+    })
+}
 }
